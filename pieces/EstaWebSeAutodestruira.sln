@@ -1,0 +1,105 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstaWeb", "EstaWeb\EstaWeb.csproj", "{D5D59E55-11AD-4B43-A73B-28E3ADEB890E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FcLibrary", "FcLibrary\FcLibrary.csproj", "{9F976ED7-82B4-4CD0-BEC0-18A77D447E66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{47867E54-7993-4057-8F62-02BA40A51E07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FcLibrary.Test", "FcLibrary.Test\FcLibrary.Test.csproj", "{81936379-F79C-4E70-8194-8691EE04A99F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoPosteadorFC", "TestFC\AutoPosteadorFC.csproj", "{5E98735A-5830-4560-A6B3-5C5A51C2A4BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PexelsLibrary", "PexelsLibrary\PexelsLibrary.csproj", "{33F94C9E-4699-4C7D-876D-62D86AE84773}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PexelImageFilter", "PexelImageFilterWeb\PexelImageFilter.csproj", "{670B12E4-98C3-4335-8D0E-16E1D61A6679}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SheetsLibrary", "SheetsLibrary\SheetsLibrary.csproj", "{FB9B6D55-4AF4-46A7-B538-42B3889CE764}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SheetsLibrary.Test", "SheetsLibrary.Test\SheetsLibrary.Test.csproj", "{7209C39E-AD21-457C-B1C6-0DD70757927C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstagramLibrary", "InstagramLibrary\InstagramLibrary.csproj", "{114809E8-30AB-4C33-8AB5-C67CBCA91D83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstagramLibrary.Test", "InstagramLibrary.Test\InstagramLibrary.Test.csproj", "{2499C7AA-4BBE-457E-86EF-3C5E2878F5BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstagramToolsLibrary", "TagsGeneratorLibrary\InstagramToolsLibrary.csproj", "{26C50D04-3683-49FA-A0A8-AFDDCAC48DDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstagramToolsLibrary.Test", "TagsGeneratorLibrary.Test\InstagramToolsLibrary.Test.csproj", "{14AF1FB2-42CE-4FBC-B5DD-F7249AD10FCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterReading", "MeterReading\MeterReading.csproj", "{023EBDC5-56D2-4541-AC9A-E9CCF0287197}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5D59E55-11AD-4B43-A73B-28E3ADEB890E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D59E55-11AD-4B43-A73B-28E3ADEB890E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D59E55-11AD-4B43-A73B-28E3ADEB890E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D59E55-11AD-4B43-A73B-28E3ADEB890E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F976ED7-82B4-4CD0-BEC0-18A77D447E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F976ED7-82B4-4CD0-BEC0-18A77D447E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F976ED7-82B4-4CD0-BEC0-18A77D447E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F976ED7-82B4-4CD0-BEC0-18A77D447E66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81936379-F79C-4E70-8194-8691EE04A99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81936379-F79C-4E70-8194-8691EE04A99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81936379-F79C-4E70-8194-8691EE04A99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81936379-F79C-4E70-8194-8691EE04A99F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E98735A-5830-4560-A6B3-5C5A51C2A4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E98735A-5830-4560-A6B3-5C5A51C2A4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E98735A-5830-4560-A6B3-5C5A51C2A4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E98735A-5830-4560-A6B3-5C5A51C2A4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F94C9E-4699-4C7D-876D-62D86AE84773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F94C9E-4699-4C7D-876D-62D86AE84773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F94C9E-4699-4C7D-876D-62D86AE84773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F94C9E-4699-4C7D-876D-62D86AE84773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670B12E4-98C3-4335-8D0E-16E1D61A6679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670B12E4-98C3-4335-8D0E-16E1D61A6679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670B12E4-98C3-4335-8D0E-16E1D61A6679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670B12E4-98C3-4335-8D0E-16E1D61A6679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9B6D55-4AF4-46A7-B538-42B3889CE764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9B6D55-4AF4-46A7-B538-42B3889CE764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9B6D55-4AF4-46A7-B538-42B3889CE764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9B6D55-4AF4-46A7-B538-42B3889CE764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7209C39E-AD21-457C-B1C6-0DD70757927C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7209C39E-AD21-457C-B1C6-0DD70757927C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7209C39E-AD21-457C-B1C6-0DD70757927C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7209C39E-AD21-457C-B1C6-0DD70757927C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114809E8-30AB-4C33-8AB5-C67CBCA91D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114809E8-30AB-4C33-8AB5-C67CBCA91D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114809E8-30AB-4C33-8AB5-C67CBCA91D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114809E8-30AB-4C33-8AB5-C67CBCA91D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2499C7AA-4BBE-457E-86EF-3C5E2878F5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2499C7AA-4BBE-457E-86EF-3C5E2878F5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2499C7AA-4BBE-457E-86EF-3C5E2878F5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2499C7AA-4BBE-457E-86EF-3C5E2878F5BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C50D04-3683-49FA-A0A8-AFDDCAC48DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C50D04-3683-49FA-A0A8-AFDDCAC48DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C50D04-3683-49FA-A0A8-AFDDCAC48DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C50D04-3683-49FA-A0A8-AFDDCAC48DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AF1FB2-42CE-4FBC-B5DD-F7249AD10FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AF1FB2-42CE-4FBC-B5DD-F7249AD10FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AF1FB2-42CE-4FBC-B5DD-F7249AD10FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AF1FB2-42CE-4FBC-B5DD-F7249AD10FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023EBDC5-56D2-4541-AC9A-E9CCF0287197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023EBDC5-56D2-4541-AC9A-E9CCF0287197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023EBDC5-56D2-4541-AC9A-E9CCF0287197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023EBDC5-56D2-4541-AC9A-E9CCF0287197}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81936379-F79C-4E70-8194-8691EE04A99F} = {47867E54-7993-4057-8F62-02BA40A51E07}
+		{7209C39E-AD21-457C-B1C6-0DD70757927C} = {47867E54-7993-4057-8F62-02BA40A51E07}
+		{2499C7AA-4BBE-457E-86EF-3C5E2878F5BB} = {47867E54-7993-4057-8F62-02BA40A51E07}
+		{14AF1FB2-42CE-4FBC-B5DD-F7249AD10FCA} = {47867E54-7993-4057-8F62-02BA40A51E07}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DD26273-28D4-4FAC-BCDB-39562D8BAC96}
+	EndGlobalSection
+EndGlobal

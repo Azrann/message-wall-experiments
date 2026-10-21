@@ -1,0 +1,180 @@
+@using System.Collections.Specialized
+@{
+    ViewData["Title"] = "Esta web se autodestruirá";
+}
+<script>
+    var counter = @ViewBag.Segundos;
+    var messageId = '@ViewBag.MessageId';
+</script>
+<div class="text-center">
+    <h1 class="display-4">
+        <p>Esta web se autodestruira 💣 <small>en <span id="segundos" class="text-muted"></span> segundos</small></p>
+    </h1>
+</div>
+<div class="bg-light mensaje  mt-4 p-4" attr-id="c1943edf-4578-4fb6-81b8-f34900382c19">
+    <h5 class="display-4"><small>Hola</small></h5>
+    <p>
+        Soy una web con unos cuantos segundos de vida, pero que importa.
+    </p>    
+    <p>
+        Si quieres puedes enviar un mensaje utilizando el cuadro de abajo y si no recibo mensajes en 24 horas ... kaboom! ya me he hecho a la idea.
+    </p>
+    <p>
+        Mientras tanto puedes contarnos que tal vas o lo que quieras y tambien puedes leer lo que otra gente ha puesto (de lo cual no me hago responsable), ten en cuenta que los mensajes no tienen nombre ni email así que puedes contarnos cualquier cosa.
+    </p>
+    <p>
+        Se que la situación no es fácil por decirlo de alguna forma pero igualmente mucho ánimo y mucha suerte!
+    </p>
+    <p>
+        Atentamente, estawebseautodestruira.com
+    </p>
+</div>
+<div class="bg-light d-none p-4 mt-4" id="mensaje-telefono">
+    <p>
+        <span class="blockquote">"Por muy larga que sea la tormenta, el sol siempre vuelve a brillar en las nubes"</span> Khalil Gibran, poeta
+    </p>
+    <p>
+        Si llevas varios dias con problemas y lo ves todo muy negro consulta el telefono de la esperanza. Atendido por voluntarios especializados en la escucha y formados para activar las capacidades de las personas para superar sus problemas. 
+    </p>
+    <p>
+        <b>Llama al nº de móvil  717 003 717</b>
+    </p>
+    <p>
+        Cuidate! 
+    </p>
+</div>
+
+<div class="bg-light botones p-4 text-center mt-4">
+    <div class="align-items-center"><button id="btn-read-messages" class="btn btn-info">Leer mensajes ✔</button><button id="btn-like" class="btn btn-success ml-3">que bueno 👍</button><button id="btn-telefono" onclick="$('#mensaje-telefono').removeClass('d-none');$('.botones').addClass('d-none');" class="btn btn-dark  ml-3">Mal día? 🌧️</button>
+    </div>
+    </div>
+<div class="text-center enviar-mensajes">
+    <div class="form-group green-border-focus basic-textarea rounded-corners">
+        <textarea class="form-control" id="textboxarea-mensaje" rows="3" style="white-space: pre;">Querida web, &#13;&#10;</textarea>
+    </div>
+    <button type="button" id="btn-send" class="btn btn-info">Enviar mensaje ✏</button>
+</div>
+<div class="alert alert-success mt-4" id="success-message">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>✉ enviado!</strong>
+</div>
+<div class="alert alert-success mt-4" id="success-like">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>👍 enviado!</strong>
+</div>
+@section Scripts
+    {
+        <script>
+            if (counter) {
+                $('#segundos').text(counter);
+            }
+            var interval = setInterval(function() {
+
+                    if (counter) {
+                        $('#segundos').text(counter);
+                        if (counter == 0) {
+                            clearInterval(interval);
+                        }
+                        counter--;
+                    }
+                },
+                1000);
+            $(document).ready(function() {
+                if (messageId && messageId.length > 34) {
+                    $.getJSON("/mensajes/" + messageId)
+                        .done(function(data) {
+                            $('.mensaje').html("<p>" + data.Text + "</p>");
+                            $('.mensaje').attr('attr-id', data.Id);
+                            counter = data.SecondsUntilDestruction;
+                            $('.mensaje').fadeTo(100, 0.5, function() { $(this).fadeTo(200, 1.0); });
+                        });
+                }
+                $(".alert-success").hide();
+                $("#btn-read-messages").click(function() {
+                    $.getJSON("/mensajes")
+                        .done(function(data) {
+                            //$('.mensaje').html('<p>' + data.Text + '</p>');
+                            $('.mensaje').html("<p>" + data.Text + "</p>");
+                            $('.mensaje').attr('attr-id', data.Id);
+                            counter = data.SecondsUntilDestruction;
+                            //$('.mensaje').fadeOut(100).fadeIn(100);
+                            $('.mensaje').fadeTo(100, 0.5, function() { $(this).fadeTo(200, 1.0); });
+                        });
+                });
+                $("#btn-like").click(function() {
+                    $.post("/like/" + $('.mensaje').attr('attr-id'));
+                    $("#success-like").fadeTo(1000, 500).slideUp(500,
+                        function() {
+                            $("#success-like").slideUp(300);
+                        });
+                });
+                $("#btn-send").click(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "/mensajes",
+                        data: JSON.stringify($('#textboxarea-mensaje').val()),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function() {
+                            $.get("/ttl")
+                                .done(function(data) {
+                                    counter = data;
+                                });
+                            $("#success-message").fadeTo(1000, 500).slideUp(500,
+                                function() {
+                                    $("#success-message").slideUp(300);
+                                });
+                            $('#segundos').css({ "background-color": "yellow" });
+                            setTimeout(function() { $('#segundos').css({ "background-color": "white" }); }, 250);
+                        }
+                    });
+                    $('#textboxarea-mensaje').val('Querida web, \n');
+                });
+                checkCookie_eu();
+
+                function checkCookie_eu()
+                {
+
+                    var consent = getCookie_eu("cookies_consent");
+
+                    if (consent == null || consent == "" || consent == undefined)
+                    {
+                        // show notification bar
+                        $('#cookie_directive_container').show();
+                    }
+
+                }
+
+                function setCookie_eu(c_name,value,exdays)
+                {
+
+                    var exdate = new Date();
+                    exdate.setDate(exdate.getDate() + exdays);
+                    var c_value = escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+                    document.cookie = c_name + "=" + c_value+"; path=/";
+
+                    $('#cookie_directive_container').hide('slow');
+                }
+
+
+                function getCookie_eu(c_name)
+                {
+                    var i,x,y,ARRcookies=document.cookie.split(";");
+                    for (i=0;i<ARRcookies.length;i++)
+                    {
+                        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+                        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+                        x=x.replace(/^\s+|\s+$/g,"");
+                        if (x==c_name)
+                        {
+                            return unescape(y);
+                        }
+                    }
+                }
+
+                $("#cookie_accept a").click(function(){
+                    setCookie_eu("cookies_consent", 1, 30);
+                });
+            });
+        </script>
+    }

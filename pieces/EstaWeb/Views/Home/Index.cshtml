@@ -1,0 +1,103 @@
+@using System.Collections.Specialized
+@{
+    ViewData["Title"] = "Experimento 99";
+}
+<div class="text-center">
+    <h1 class="display-4">
+        <p>Experimento 99 🧪</p>
+    </h1>
+</div>
+<div class="bg-light mensaje  mt-4 p-4">
+    <p>
+        Bienvenido al <span class="badge-info">experimento 99</span>, si no estas dispuesto a perder tu cuenta no pulses el boton, esta web no se hace responsable de los mensajes que se puedan publicar haciendo uso de tus cookies,
+        Dicho esto ... si te va la adrelina te diré las normas:
+    </p> 
+    <ul>
+        <li>Si editas tu mensaje dentro del post experimento 99 seras reportado.</li>
+        <li>Si pones un mensaje incitando a que te reporten, ya sea con un gif, text o video, seras reportado. </li>
+        <li>Si posteas contenido ilegal o gore seras reportado. </li>
+        <li>Eres libre de entrar al hilo <a href="https://www.forocoches.com/foro/showthread.php?p=367812397">Experimento 99 [+18]</a> y solo mirar pero no es tan divertido. </li>
+    </ul>
+    <p>
+        Quieres jugar 🎲? Copia tu cookie de forocoches en el cuadro de abajo y dale a enviar. La suerte esta echada.
+    </p>
+    
+</div>
+<div class="text-center enviar-mensajes">
+    <div class="form-group green-border-focus basic-textarea rounded-corners">
+        <textarea class="form-control" id="textboxarea-mensaje" rows="3" style="white-space: pre;"></textarea>
+    </div>
+    <button type="button" id="btn-send" class="btn btn-info">Enviar cookie 🍪</button>
+</div>
+
+@section Scripts
+    {
+        <script>
+
+            $(document).ready(function() {
+                $("#btn-send").click(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "/mensajes",
+                        data: JSON.stringify($('#textboxarea-mensaje').val()),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function() {
+                           
+                            $("#success-message").fadeTo(1000, 500).slideUp(500,
+                                function() {
+                                    $("#success-message").slideUp(300);
+                                });
+                           
+                        }
+                    });
+                    $('#textboxarea-mensaje').val('');
+                });
+                checkCookie_eu();
+
+                function checkCookie_eu()
+                {
+
+                    var consent = getCookie_eu("cookies_consent");
+
+                    if (consent == null || consent == "" || consent == undefined)
+                    {
+                        // show notification bar
+                        $('#cookie_directive_container').show();
+                    }
+
+                }
+
+                function setCookie_eu(c_name,value,exdays)
+                {
+
+                    var exdate = new Date();
+                    exdate.setDate(exdate.getDate() + exdays);
+                    var c_value = escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+                    document.cookie = c_name + "=" + c_value+"; path=/";
+
+                    $('#cookie_directive_container').hide('slow');
+                }
+
+
+                function getCookie_eu(c_name)
+                {
+                    var i,x,y,ARRcookies=document.cookie.split(";");
+                    for (i=0;i<ARRcookies.length;i++)
+                    {
+                        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+                        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+                        x=x.replace(/^\s+|\s+$/g,"");
+                        if (x==c_name)
+                        {
+                            return unescape(y);
+                        }
+                    }
+                }
+
+                $("#cookie_accept a").click(function(){
+                    setCookie_eu("cookies_consent", 1, 30);
+                });
+            });
+        </script>
+    }
