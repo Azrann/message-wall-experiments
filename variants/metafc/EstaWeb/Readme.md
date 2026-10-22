@@ -1,23 +1,25 @@
+**Languages:** [English](Readme.md) · [Español](README.es.md)
+
 # EstaWeb
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2020.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2020.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2020-04-29**, [`metafc/src/EstaWeb/Views/Shared/_Layout.cshtml`](Views/Shared/_Layout.cshtml); fecha de modificación conservada.
-- Primer registro del repositorio Git original que contiene este código: **2014-10-05**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [Newtonsoft.Json 8.0.3](https://www.nuget.org/packages/Newtonsoft.Json/8.0.3), publicada el **2016-03-14** (versión declarada), en [`metafc/src/EstaWeb/EstaWeb.csproj`](EstaWeb.csproj).
-- Referencia adicional: destino `netcoreapp3.1` en [`metafc/src/EstaWeb/EstaWeb.csproj`](EstaWeb.csproj); su [versión estable se publicó el 2019-12-03](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2020-04-29**, [`metafc/src/EstaWeb/Views/Shared/_Layout.cshtml`](Views/Shared/_Layout.cshtml); preserved modification timestamp.
+- First record in the original Git repository containing this code: **2014-10-05**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [Newtonsoft.Json 8.0.3](https://www.nuget.org/packages/Newtonsoft.Json/8.0.3), published on **2016-03-14** (declared version), in [`metafc/src/EstaWeb/EstaWeb.csproj`](EstaWeb.csproj).
+- Additional reference: target `netcoreapp3.1` in [`metafc/src/EstaWeb/EstaWeb.csproj`](EstaWeb.csproj); its [stable release was published on 2019-12-03](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-El servicio utiliza un ConcurrentDictionary para mensajes y ofrece lectura, likes y borrado. Es interesante observar la semántica de seleccionar un mensaje aleatorio y retirarlo, junto con las limitaciones de mantener el estado en memoria.
+The service uses a ConcurrentDictionary for messages and supports reading, likes, and deletion. Explore the semantics of selecting and removing a random message, alongside the limitations of keeping state in memory.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`MessageService.cs`](MessageService.cs)
 - [`Controllers/HomeController.cs`](Controllers/HomeController.cs)

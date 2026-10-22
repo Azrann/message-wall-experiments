@@ -1,25 +1,27 @@
+**Languages:** [English](Readme.md) · [Español](README.es.md)
+
 # EstaWebSeAutodestruira
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2020.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2020.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2020-05-10**, [`pieces/EstaWebSeAutodestruira/appsettings.json`](appsettings.json); fecha del commit que modificó el archivo, recuperada del Git local.
-- Primer registro del repositorio Git original que contiene este código: **2020-05-10**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [Microsoft.EntityFrameworkCore.SqlServer 3.1.0-preview1.19506.2](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/3.1.0-preview1.19506.2), publicada el **2019-10-15** (versión declarada), en [`pieces/EstaWebSeAutodestruira/EstaWebSeAutodestruira.csproj`](EstaWebSeAutodestruira.csproj).
-- Referencia adicional: destino `netcoreapp3.1` en [`pieces/EstaWebSeAutodestruira/EstaWebSeAutodestruira.csproj`](EstaWebSeAutodestruira.csproj); su [versión estable se publicó el 2019-12-03](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2020-05-10**, [`pieces/EstaWebSeAutodestruira/appsettings.json`](appsettings.json); date of the commit modifying the file, recovered from local Git history.
+- First record in the original Git repository containing this code: **2020-05-10**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [Microsoft.EntityFrameworkCore.SqlServer 3.1.0-preview1.19506.2](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/3.1.0-preview1.19506.2), published on **2019-10-15** (declared version), in [`pieces/EstaWebSeAutodestruira/EstaWebSeAutodestruira.csproj`](EstaWebSeAutodestruira.csproj).
+- Additional reference: target `netcoreapp3.1` in [`pieces/EstaWebSeAutodestruira/EstaWebSeAutodestruira.csproj`](EstaWebSeAutodestruira.csproj); its [stable release was published on 2019-12-03](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+October 2026 copy timestamps and documents generated during this review were excluded. Recoverable dates do not guarantee that there are no later, undated changes.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-El prototipo mantiene mensajes en memoria, registra LastUpdate y permite añadirlos o recuperar uno aleatorio. La idea de una web efímera está esbozada; el servicio visible no incluye un temporizador de autodestrucción completo.
+The prototype keeps messages in memory, records LastUpdate, and allows adding messages or retrieving a random one. The idea of an ephemeral website is sketched out; the visible service has no complete self-destruct timer.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`MessageService.cs`](MessageService.cs)
 - [`Controllers/MessageController.cs`](Controllers/MessageController.cs)

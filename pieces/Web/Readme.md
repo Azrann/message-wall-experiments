@@ -1,22 +1,24 @@
+**Languages:** [English](Readme.md) · [Español](README.es.md)
+
 # Web
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2020.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2020.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2020-05-10**, [`pieces/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js`](wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js); fecha del commit que modificó el archivo, recuperada del Git local.
-- Primer registro del repositorio Git original que contiene este código: **2020-05-10**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Referencia adicional: destino `netcoreapp3.1` en [`pieces/Web/Web.csproj`](Web.csproj); su [versión estable se publicó el 2019-12-03](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2020-05-10**, [`pieces/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js`](wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js); date of the commit modifying the file, recovered from local Git history.
+- First record in the original Git repository containing this code: **2020-05-10**. This may be an import and does not establish when the code was first written.
+- Additional reference: target `netcoreapp3.1` in [`pieces/Web/Web.csproj`](Web.csproj); its [stable release was published on 2019-12-03](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+October 2026 copy timestamps and documents generated during this review were excluded. Recoverable dates do not guarantee that there are no later, undated changes.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-La pequeña API separa mensajes y controlador, con operaciones de añadir y recuperar un mensaje aleatorio. Su tamaño permite seguir un prototipo de principio a fin y compararlo con las otras variantes de muros de mensajes.
+This small API separates messages from the controller, with operations to add and retrieve a random message. Its size makes it possible to follow the prototype end to end and compare it with the other message wall variants.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`MessageService.cs`](MessageService.cs)
 - [`Controllers/MessageController.cs`](Controllers/MessageController.cs)
